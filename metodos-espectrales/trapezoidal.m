@@ -3,7 +3,6 @@
 %
 function res = trapezoidal(fun, a, b, n_pts, flag_periodic)
 
-
     % Si el problema es periodico, quitamos el ultimo punto
     if flag_periodic == 1
 
@@ -35,10 +34,5 @@ function res = trapezoidal(fun, a, b, n_pts, flag_periodic)
         res = (b-a) / (n_pts-1) * (sum(f_i) - 1/2 * (f_i(1) + f_i(end))); 
 
     end
-
-
-    
-
-
 
 end

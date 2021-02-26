@@ -41,10 +41,8 @@ a = 0;
 b = 2*pi;
 flag_periodic = 1;
 
-% n_vec = [2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 50, 100, 500, 1000];
 n_vec = [2, 4, 6,  8,  10, 15, 20, 50, 100, 500, 1000];
 err_per = 0*n_vec;
-
 
 for ind = 1:length(n_vec)
 
@@ -54,12 +52,18 @@ for ind = 1:length(n_vec)
 
 end
 
+%
+% Grafica mala
+%
 figure(1)
 plot(n_vec_no, err_no_per)
 hold on;
 plot(n_vec, err_per)
 hold off;
 
+%
+% En escala logaritmica realmente podemos ver como se comporta el error
+%
 figure(2)
 loglog(n_vec_no, err_no_per, '-ok', 'LineWidth', 3, 'MarkerSize', 10, 'MarkerFaceColor', 'c');
 hold on;
@@ -73,6 +77,10 @@ title('Error for $\int_a^b \exp(\frac{1}{\sqrt{2}} \sin{x}) dx$','interpreter','
 pretty_plot(2, 25);
 
 
+%
+% Escala logaritmica para el error y lineal para el numero de puntos tambien
+% illustra el comportamiento de manera adecauda
+%
 figure(3)
 semilogy(n_vec_no, err_no_per, '-ok', 'LineWidth', 3, 'MarkerSize', 10, 'MarkerFaceColor', 'c');
 hold on;
