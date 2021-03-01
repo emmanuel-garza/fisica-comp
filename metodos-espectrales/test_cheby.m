@@ -16,12 +16,8 @@ for ind = 1:length(n_vec)
     df_dx_exact = -exp( 1 ./ (1 + 0.25.*x_i.^2) ) .* x_i ./ ...
         (2 * (1 + 0.25.*x_i.^2).^2 );
 
-    % f_i = 1 ./ (1 + 0.25.*x_i.^2);
-    % df_dx_exact = -x_i ./ (2 * (1 + 0.25.*x_i.^2).^2);
-
     % Derivada Numerica
     df_dx_i = D * f_i;
-
 
     err_vec(ind) = max(abs(df_dx_i-df_dx_exact));
 
